@@ -27,5 +27,70 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  checkDoorBell();
+  delay(250);
+  senseDistanceFromDoor();
+  delay(250);
+  determineLightBrightness();
+  delay(250);
+  determineFanSpeed();
+  delay(250);
+  determineIfNight();
+  delay(250);
+}
+/*
+ will determin if the crash button has been presed
+ @prams = none
+ @return = none
+ */
+void checkDoorBell(){
+
+}
+/*
+ will determin if a person is within 5 meters of the door
+ @prams = none
+ @return = none
+ */
+void senseDistanceFromDoor(){
+
+}
+/*
+ will determin how bright the lights will be
+ @prams = none
+ @return = none
+ */
+void determineLightBrightness(){
+
+}
+/*
+ will determin how fast the fan shuld be
+ @prams = none
+ @return = none
+ */
+void determineFanSpeed(){
+
+}
+/*
+ will determin if the sun has set
+ @prams = none
+ @return = none
+ */
+void templeLockdown(){
+do{
+ 
+}while();
+}
+/*
+ will run the lock down function
+ @prams = none
+ @return = none
+ */
+
+/*
+ will check for a RFID card
+ @prams = none
+ @return = none
+ */
+void checkForCard(){
+
 }
