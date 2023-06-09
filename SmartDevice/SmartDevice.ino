@@ -2,10 +2,17 @@
 #include <SPI.h>
 #include <SD.h>
 
+// SD Card initialisation
+  Serial.print("Initializing SD card...");
+  if (!SD.begin(10)) {
+    Serial.println("initialization failed!");
+    while (1);
+  }
+
 // Real Time Clock (RTC)
-#include "RTClib.h"
-RTC_Millis rtc;     // Software Real Time Clock (RTC)
-DateTime rightNow;  // used to store the current time.
+rtc.begin(DateTime(F(__DATE__), F(__TIME__)));
+Serial.println("initialization done.");
+logEvent("System Initialisation...");
 
 // SD Card - Confirm Pin
 #define SDPIN 53
@@ -61,74 +68,20 @@ void setup() {
 }
 
 void loop() {
-  checkDoorBell();
-  delay(250);
-  senseDistanceFromDoor();
-  delay(250);
-  determineLightBrightness();
-  delay(250);
-  determineFanSpeed();
-  delay(250);
-  determineIfNight();
+  templeSercuirity ();
   delay(250);
 }
 
-void logEvent(string dataToLog){
-  Date
-}
-/*
- will determin if the crash button has been presed
- @prams = none
- @return = none
- */
-void checkDoorBell(){
+templeSercuirity (){
+int lineSensorValue = digitalRead(lineSensorPin);
 
-}
-/*
- will determin if a person is within 5 meters of the door
- @prams = none
- @return = none
- */
-void senseDistanceFromDoor(){
-
-}
-/*
- will determin how bright the lights will be
- @prams = none
- @return = none
- */
-void determineLightBrightness(){
-
-}
-/*
- will determin how fast the fan shuld be
- @prams = none
- @return = none
- */
-void determineFanSpeed(){
-
-}
-/*
- will determin if the sun has set
- @prams = none
- @return = none
- */
-void templeLockdown(){
-do{
- 
-}while();
-}
-/*
- will run the lock down function
- @prams = none
- @return = none
- */
-
-/*
- will check for a RFID card
- @prams = none
- @return = none
- */
-void checkForCard(){
-
+ while(lineSensorValue == LOW){
+  digitalWrite(LEDRED, HIGH);
+  
+  int lineSensorValue = digitalRead(lineSensorPin);
+ }
+ digitalWrite(LEDRED, LOW);
+ digitalWrite(LEDGREEN, HIGH);
+ delay(1000);
+ digitalWrite(LEDGREEN, LOW);
 }
