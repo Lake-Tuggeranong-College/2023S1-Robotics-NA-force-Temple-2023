@@ -68,20 +68,13 @@ void setup() {
 }
 
 void loop() {
-  templeSercuirity ();
+  forceDoor ();
   delay(250);
 }
 
-templeSercuirity (){
-int lineSensorValue = digitalRead(lineSensorPin);
 
- while(lineSensorValue == LOW){
-  digitalWrite(LEDRED, HIGH);
+forceDoor(){
+
   
-  int lineSensorValue = digitalRead(lineSensorPin);
- }
- digitalWrite(LEDRED, LOW);
- digitalWrite(LEDGREEN, HIGH);
- delay(1000);
- digitalWrite(LEDGREEN, LOW);
 }
+
